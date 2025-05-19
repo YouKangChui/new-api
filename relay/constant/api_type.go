@@ -32,6 +32,8 @@ const (
 	APITypeBaiduV2
 	APITypeOpenRouter
 	APITypeXinference
+	APITypeXai
+	APITypeCoze
 	APITypeDummy // this one is only for count, do not add any channel after this
 )
 
@@ -92,6 +94,10 @@ func ChannelType2APIType(channelType int) (int, bool) {
 		apiType = APITypeOpenRouter
 	case common.ChannelTypeXinference:
 		apiType = APITypeXinference
+	case common.ChannelTypeXai:
+		apiType = APITypeXai
+	case common.ChannelTypeCoze:
+		apiType = APITypeCoze
 	}
 	if apiType == -1 {
 		return APITypeOpenAI, false
